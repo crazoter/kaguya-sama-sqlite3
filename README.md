@@ -8,6 +8,8 @@ Files
 
 * kaguya_data.db:  SQLite3 file containing currently stored information on the manga series.
 * kaguya_data.sqbpro: [DB Browser for SQLite](https://sqlitebrowser.org/) project file
+* data_entry.py: Python GUI w/ Tkinter to add new entries into the SQLite3 file
+    * A online version of this is not planned, but the code is sufficiently modularized to support such endeavours
 * schema.pdf: Diagram of the database schema
 * gen_diagram_helper.cmd: Helper windows command script to generate schema.pdf using SchemaCrawler
 
@@ -43,13 +45,13 @@ Characters in the manga. Note that the narrator is also a character in this data
 * While the narrator's words may represent the absolute truth, they cannot be taken as fact due to character developments, hidden character knowledge or chaos theory.
 
 ### Opinion
-Contains information on a character's opinion on a character, topic or item.
+Contains information on a character's opinion on a character, topic or item. If the opinion is formed / expressed across multiple consecutive pages in a chapter, the earliest page where the opinion is expressed is stored.
 
 ### Action
-Contains information on something a character performed (as an action) to a character or item.
+Contains information on something a character performed (as an action) to a character or item.  If the action is performed / expressed across multiple consecutive pages in a chapter, the earliest page where the action is performed is stored.
 
 ### Event
-Contains information on something that happened (not performed by a character) to a character or an item.
+Contains information on something that happened (not performed by a character) to a character or an item. If the event occurred across multiple consecutive pages in a chapter, the earliest page where the event occurred is stored.
 
 ### Other notes
 Speculation or random theories are omitted from the dataset; only confirmed facts / opinions mentioned in the manga is recorded. However, if a particular item / action has some unstated significance, this may be brought up in the dataset.

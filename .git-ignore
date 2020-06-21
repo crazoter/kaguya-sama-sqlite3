@@ -1,0 +1,3 @@
+# exclude everything in chapter dir but keep the directory itself
+chapters/*
+!chapters/.git-keep 
