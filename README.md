@@ -1,26 +1,33 @@
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
 # kaguya-sama-sqlite3
 A SQLite3 database on the Kaguya-sama: Love is War manga that I update during my free time for fun
 
-Updated to: Chapter 0
+**Updated to:** Chapter 0
 
-Files
+
+Directories & Files
 ---
+* **chapters**: Downloaded chapters from [guya.moe](https://guya.moe/read/manga/Kaguya-Wants-To-Be-Confessed-To/) in zip format. Note that the contents of this folder is ignored by .git-ignore. Potentially used for reading and auditing, but KIV.
+* **data**: Contains the sqlite3 database and other database related scripts & images.
+    * **kaguya_data.db**:  SQLite3 file containing currently stored information on the manga series.
+    * **kaguya_data.sqbpro**: [DB Browser for SQLite](https://sqlitebrowser.org/) project file
+    * **schema.pdf**: Diagram of the database schema
+    * **gen_diagram_helper.cmd**: Helper windows command script to generate schema.pdf using SchemaCrawler
+* **data_entry**: Contains python code for local data_entry. A online version of this is not planned, but the code is sufficiently modularized to support such endeavours.
+    
+    * **gui<span>.py**: GUI w/ Tkinter to add new entries into the SQLite3 file
+     * **sqlite3_wrapper<span>.py**: Wrapper for SQLite3 commands to the database
+     * **data_entry<span>.py**: Main python script for the data_entry program, serves as the controller
 
-* kaguya_data.db:  SQLite3 file containing currently stored information on the manga series.
-* kaguya_data.sqbpro: [DB Browser for SQLite](https://sqlitebrowser.org/) project file
-* data_entry.py: Python GUI w/ Tkinter to add new entries into the SQLite3 file
-    * A online version of this is not planned, but the code is sufficiently modularized to support such endeavours
-* schema.pdf: Diagram of the database schema
-* gen_diagram_helper.cmd: Helper windows command script to generate schema.pdf using SchemaCrawler
-
-Tools used
+Other tools used
 ---
 * [DB Browser for SQLite](https://sqlitebrowser.org/)
 * [SchemaCrawler](https://www.schemacrawler.com/diagramming.html) for diagramming the schema
 
 Schema
 ---
-![Image of schema](./schema.png)
+![Image of schema](./data/schema.png)
 
 ### Series
 Name of the series e.g. "Main" or "4koma". For succinctness the names used is unlikely to tally with the full name of the actual series. Official Doujin is not part of the dataset as it is not canon.
